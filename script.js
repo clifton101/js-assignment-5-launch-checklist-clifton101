@@ -1,17 +1,17 @@
 // Write your JavaScript code here!
 
-const { addDestinationInfo, pickPlanet, myFetch } = require("./scriptHelper");
+// var { addDestinationInfo, pickPlanet, myFetch } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
     
-    let formButton = document.getElementById("formSubmit");
-    formButton.addEventListener("click", function(e){
-        e.preventDefault();
+    const formButton = document.getElementById("formSubmit");
+    formButton.addEventListener("click", function(event){
+        event.preventDefault();
         let pilot = document.querySelector("input[name=pilotName]").value;
-        let copilot = document.querySelector("input[name=copolitName").value;
-        let fuelLevel = document.querySelector("input[name=fuelLevel").value;
-        let cargoLevel = document.querySelector("input[name=cargoMass").value;
-        let list = document.getElementById("faultyItems");
+        let copilot = document.querySelector("input[name=copilotName]").value;
+        let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
+        let cargoLevel = document.querySelector("input[name=cargoMass]").value;
+        let list = document.getElementById('faultyItems');
 
          //alert("Testing Block");
 
@@ -34,10 +34,10 @@ window.addEventListener("load", function() {
        let diameter = planet.diameter;
        let star = planet.star;
        let distance = planet.distance;
-       let imageUrl = planet.image;
        let moons = planet.moons;
+       let imageUrl = planet.image;
       
-       //addDestinationInfo(document, name, diameter, star, distance, imageUrl, moons);
+       addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl);
   
   })
    
